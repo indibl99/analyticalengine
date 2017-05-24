@@ -23,16 +23,22 @@ public class AnalyticalEngine {
 			cards.add(text[maxIndx]);
 		}
 		sf.close();
+		
+		
+		
+		Integer []array = new Integer[50];
+		Arrays.fill(array, new Integer(0));
+		array[49] = 3;
+		array[48] = 4;
+		mill.setEgress(array);
+		
 		CardReader cReader = new CardReader(cards, store, mill);
 		
-		Store.printStoreIndexValue(100);
+		
 		
 		//mill.setIngress(new Integer[50]); //retrieves a value from the store and sets it to the Ingress Axle 
 		//mill.add();
-		Integer []array = new Integer[50];
-		array[49] = 3;
-		array[48] = 4;
-		mill.setEgress(array); //this line is  place holder
+		 //this line is  place holder
 		
  
 		Store.printStoreIndexValue(100);

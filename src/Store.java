@@ -26,8 +26,9 @@ public class Store {
 	{
 		for(int i = 0; i < 50; i++)
 		{
-			System.out.println(values.get(index)[i].toString());
+			System.out.print(values.get(index)[i].toString());
 		}
+		System.out.println("");
 	}
 	
 	public static Integer[] convertToIntArray(Integer num)

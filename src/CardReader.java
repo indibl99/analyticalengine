@@ -26,28 +26,33 @@ public class CardReader {
 				
 				Integer val = Integer.parseInt(tempNC);
 				Integer[] valArray = Store.convertToIntArray(val);
-				mill.setIngress(valArray);
+				mill.setIngress(mill.currentAxel,valArray);
 				store.values.set(address, valArray);
-				mill.setIngress(new Integer[50]);  //POTENTIAL BUG?
+				Integer[] arrayN = new Integer[50];
+				Arrays.fill(arrayN, 0);
+				mill.setIngress(mill.currentAxel,arrayN);
+				Store.printStoreIndexValue(100);
 				
 				break;
 			case "L":
 				String tempLA = cards.get(i).substring(1,4);
 				int addressL = Integer.parseInt(tempLA);
-				mill.setIngress(store.values.get(addressL));
+				mill.setIngress(mill.currentAxel, store.values.get(addressL));
 				break;
 				
 			case "S":
 				String tempSA = cards.get(i).substring(1,4);
 				int addressS = Integer.parseInt(tempSA);
-				store.values.set(addressS, mill.egressAxel);	
+				store.values.set(addressS, mill.egressAxel);
 				break;
 				
 			case "Z":
 				String tempZA = cards.get(i).substring(1,4);
 				int addressZ = Integer.parseInt(tempZA);
-				mill.setIngress(store.values.get(addressZ));
-				store.values.set(addressZ, new Integer[50]);
+				mill.setIngress(mill.currentAxel, store.values.get(addressZ));
+				Integer[] arrayZ = new Integer[50];
+				Arrays.fill(arrayZ, 0);
+				store.values.set(addressZ, arrayZ);
 				break;
 			case "+":
 				
