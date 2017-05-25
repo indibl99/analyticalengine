@@ -1,26 +1,36 @@
-import java.util.Vector;
-
 
 public class CentralMill {
 	
-	public Vector<Integer> rack = new Vector<Integer>(10);
+	/* (please refer to the attached diagram of the Analytical Engine in our written report)
+	 *  In the actual machine, numbers that were being used as input for various calculations
+	 *  were held in one of the three ingress axles. These columns were physically a stack of 50, 10-tooth gears 
+	 *  in which each gear tooth represented a digit 0-9, such that each axel (or column) could represent
+	 *  one number of  a maximum of 50 digits.
+	 *  The egress axel is the same as the ingress axel, except it stores output numbers after the calculation
+	 *  has been performed rather than input numbers.
+	 *  
+	 *  The Central Mill of the analytical engine functions as the Central Processing Unit (stores numbers
+	 *  to be used in calculations immediately, transfers numbers into the appropriate apparatus
+	 *  to perform the given operation.
+	 *  
+	 */
 	
-	//public int ingressAxel1; //note: a vector would more closely model a 50 digit number
 	public Integer[] ingressAxel0 = new Integer[50];
 	public Integer[] ingressAxel1 = new Integer[50];
 	public Integer[] ingressAxelP = new Integer[50];
 	public Integer[] egressAxel = new Integer[50];
-	public int currentAxel = 0;
+	public int currentAxel = 0; //keeps track of which ingress axel should be used
 	
-	public boolean runUpLeverOn = false;
+	public boolean runUpLeverOn = false; //this is not used in our model, but the run-up lever was used to indicate extreme cases
 	
 	public CentralMill()
 	{
 		
 	}
 	
-	public void setIngress(int which, Integer[] input) //input will be from the store - maybe pass the Store and an index? 
+	public void setIngress(int which, Integer[] input) 
 	{
+		//alternates which ingress axel is used 
 		if (which == 0) {
 			ingressAxel0 = input;
 			currentAxel = 1;
@@ -31,7 +41,7 @@ public class CentralMill {
 		}
 	}
 	
-	public void setIngressP(Integer[] input) //input will be from the store - maybe pass the Store and an index? 
+	public void setIngressP(Integer[] input)
 	{
 		ingressAxelP = input;
 	}

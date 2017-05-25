@@ -2,7 +2,16 @@ import java.util.*;
 
 public class Store {	
 	
-	public static ArrayList<Integer[]> values = new ArrayList<Integer[]>(); //should these be arrays of Integer objects?
+	/* The Store of the Analytical Engine is similiar the the memory of the modern computer
+	 * Consisting of 1000 axels (like the ingress/egress set up), each offering the possibility
+	 * to store a number of a maximum of 50 digits. In our model, an array list represents the 
+	 * collection of axels composing the store (each of which has a corresponding address), and 
+	 * each Integer array within the array list represents an axel with each element representing one of 50 digits 
+	 * 
+	 * 
+	 */
+	
+	public static ArrayList<Integer[]> values = new ArrayList<Integer[]>(); 
 	
 	public Store()
 	{
@@ -19,7 +28,6 @@ public class Store {
 			values.add(digits);
 			
 		}
-		//printStoreIndex(100);
 	}
 	
 	public static void printStoreIndexValue(int index)
