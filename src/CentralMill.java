@@ -1,3 +1,5 @@
+import java.util.*;
+
 
 public class CentralMill {
 	
@@ -19,6 +21,8 @@ public class CentralMill {
 	public Integer[] ingressAxel1 = new Integer[50];
 	public Integer[] ingressAxelP = new Integer[50];
 	public Integer[] egressAxel = new Integer[50];
+	public AnticipatingCarriage aCarriage = new AnticipatingCarriage();
+	
 	public int currentAxel = 0; //keeps track of which ingress axel should be used
 	
 	public boolean runUpLeverOn = false; //this is not used in our model, but the run-up lever was used to indicate extreme cases
@@ -51,9 +55,17 @@ public class CentralMill {
 		egressAxel = output;
 	}
 	
-	public void add()
+	public int convertToInt(Integer[] axel)
 	{
-		//TBD
+		int converted = 0;
+		String num = "";
+		for(int i = 0; i < axel.length; i++)
+		{
+			num = num + axel[i];
+		
+		}
+		converted = Integer.parseInt(num);
+		return converted;
 	}
 
 }

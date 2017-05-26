@@ -7,7 +7,7 @@ public class AnalyticalEngine {
 	{
 		Store store = new Store();
 		CentralMill mill = new CentralMill();
-		boolean steam = true; //Babbage's engine was powered by a steam engine
+		boolean steam = true; //Babbage's machine was powered by a steam engine
 
 		run(steam, store, mill);
 	}
