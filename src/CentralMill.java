@@ -3,7 +3,7 @@ import java.util.*;
 
 public class CentralMill {
 	
-	/* (please refer to the attached diagram of the Analytical Engine in our written report)
+	/* (please refer to the diagram of the Analytical Engine in our written report)
 	 *  In the actual machine, numbers that were being used as input for various calculations
 	 *  were held in one of the three ingress axles. These columns were physically a stack of 50, 10-tooth gears 
 	 *  in which each gear tooth represented a digit 0-9, such that each axel (or column) could represent
@@ -24,9 +24,7 @@ public class CentralMill {
 	public AnticipatingCarriage aCarriage = new AnticipatingCarriage();
 	
 	public int currentAxel = 0; //keeps track of which ingress axel should be used
-	
-	public boolean runUpLeverOn = false; //this is not used in our model, but the run-up lever was used to indicate extreme cases
-	
+		
 	public CentralMill()
 	{
 		

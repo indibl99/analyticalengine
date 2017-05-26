@@ -9,6 +9,8 @@ public class CardReader {
 		 * project: https://www.fourmilab.ch/babbage/)
 		 * 
 		 * N: indicates a number card
+		 * 		the number immediately after N indicates the address of the store of that number
+		 * 		the following number indicates the value to be stored
 		 * L, S, or Z: indicates a variable card
 		 * +, -, /, or *: indicates an operation card
 		 * 
@@ -23,12 +25,13 @@ public class CardReader {
 			
 			switch(type)
 			{
+			//note: current code does not account for bad user input input
 			case "N":
 				String tempNA = cards.get(i).substring(1, 4);
 				Integer address = Integer.parseInt(tempNA); //parses the address from the punch card
 				String tempNB = cards.get(i).substring(5, 6); //parses the value to be stored at that address in the Store
 				String tempNC;
-				if(tempNB.equals("-")) //if value is negative
+				if(tempNB.equals("-")) //if value is negative (however, current model does not allow for subtraction, so trying to add a negative number will not work properly)
 				{
 					tempNC = cards.get(i).substring(6);
 				}
@@ -88,7 +91,7 @@ public class CardReader {
 				
 			case "/":
 				//would include a call to a divide method, with a setup similiar to add
-
+				
 				break;
 			default:
 				continue;
